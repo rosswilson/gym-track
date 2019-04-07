@@ -29,7 +29,6 @@ blocks:
             - mix local.rebar --force
 
             - mix deps.get
-            - mix do compile, dialyzer --plt
             - MIX_ENV=test mix compile
 
             # Store deps after compilation.
