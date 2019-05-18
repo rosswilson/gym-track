@@ -1,0 +1,3 @@
+# This is used by Dokku to do HTTP checks, see the docs for more details
+# https://github.com/dokku/dokku/blob/master/docs/deployment/zero-downtime-deploys.md
+/
