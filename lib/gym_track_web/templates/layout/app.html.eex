@@ -9,6 +9,12 @@
   </head>
   <body>
     <main role="main" class="container">
+      <%= if user = current_user(@conn) do %>
+        Signed In as <%= user.email %>
+      <% else %>
+        <%= link "Sign In", to: Routes.session_path(@conn, :new) %>
+      <% end %>
+
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 

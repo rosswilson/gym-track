@@ -3,4 +3,7 @@
 <p>Recently I joined a gym, and for weeks I've been using the Notes app on my phone to track my progress. There are hundreds of apps that do this too, but I thought it'd be a nice project to build one myself.</p>
 
 <p><%= link "Register", to: Routes.register_path(@conn, :new) %></p>
+
+<p><%= link "Sign In", to: Routes.session_path(@conn, :new) %></p>
+
 <p><%= link "Exercises", to: Routes.exercise_path(@conn, :index) %></p>

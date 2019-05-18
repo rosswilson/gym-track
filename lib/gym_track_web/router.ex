@@ -22,6 +22,9 @@ defmodule GymTrackWeb.Router do
 
     get "/register", RegisterController, :new
     post "/register", RegisterController, :create
+
+    get "/signin", SessionController, :new
+    post "/signin", SessionController, :create
   end
 
   # Other scopes may use custom stacks.
