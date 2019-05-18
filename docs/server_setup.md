@@ -75,10 +75,9 @@ dokku postgres:link gym_track_db gym_track
 ## Setup CircleCI SSH
 
 ```
-cd /tmp
-ssh-keygen
+ssh-keygen -f /tmp/id_rsa
 dokku ssh-keys:add circleci /tmp/id_rsa.pub
-rm -rf /tmp/id_rsa /tmp/id_rsa.pub
+shred /tmp/id_rsa /tmp/id_rsa.pub
 ```
 
 ## Configure Git Remote
