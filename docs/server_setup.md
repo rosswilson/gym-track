@@ -77,8 +77,13 @@ dokku postgres:link gym_track_db gym_track
 ```
 ssh-keygen -f /tmp/id_rsa
 dokku ssh-keys:add circleci /tmp/id_rsa.pub
-shred /tmp/id_rsa /tmp/id_rsa.pub
 ```
+
+Copy the private key and go configure CircleCI to use it.
+
+Now delete the public and private key from the server.
+
+`shred /tmp/id_rsa /tmp/id_rsa.pub`
 
 ## Configure Git Remote
 
