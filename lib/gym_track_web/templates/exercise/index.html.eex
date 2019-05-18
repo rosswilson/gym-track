@@ -1,0 +1,26 @@
+<h1>Exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for exercise <- @exercises do %>
+    <tr>
+      <td><%= exercise.name %></td>
+
+      <td>
+        <%= link "Show", to: Routes.exercise_path(@conn, :show, exercise) %>
+        <%= link "Edit", to: Routes.exercise_path(@conn, :edit, exercise) %>
+        <%= link "Delete", to: Routes.exercise_path(@conn, :delete, exercise), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Exercise", to: Routes.exercise_path(@conn, :new) %></span>

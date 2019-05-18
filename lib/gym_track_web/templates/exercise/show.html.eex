@@ -1,0 +1,18 @@
+<h1>Show Exercise</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @exercise.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @exercise.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.exercise_path(@conn, :edit, @exercise) %></span>
+<span><%= link "Back", to: Routes.exercise_path(@conn, :index) %></span>
