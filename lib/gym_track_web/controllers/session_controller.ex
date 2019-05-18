@@ -1,7 +1,7 @@
 defmodule GymTrackWeb.SessionController do
   use GymTrackWeb, :controller
 
-  alias GymTrack.{Sessions, Users}
+  alias GymTrack.Sessions
   alias GymTrack.Sessions.Session
 
   def new(conn, _params) do

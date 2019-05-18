@@ -8,7 +8,6 @@ defmodule GymTrack.Sessions do
   alias GymTrack.Sessions.Session
 
   alias GymTrack.Users
-  alias GymTrack.Users.User
 
   @doc """
   Creates a session.
@@ -29,9 +28,14 @@ defmodule GymTrack.Sessions do
   end
 
   def authenticate(%Session{email: email, password: password}) do
-    case Users.get_user_by_email(email) do
-      %User{} = user -> {:ok, user}
-      nil -> {:error, nil}
+    Users.get_user_by_email(email)
+    |> check_password(password)
+  end
+
+  defp check_password(user, password) do
+    case Bcrypt.check_pass(user, password) do
+      {:ok, user} -> {:ok, user}
+      {:error, _} -> {:error, nil}
     end
   end
 
