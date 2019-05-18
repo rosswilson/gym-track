@@ -16,3 +16,6 @@ config :gym_track, GymTrackWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Make bcrypt faster during test runs
+config :bcrypt_elixir, :log_rounds, 4
