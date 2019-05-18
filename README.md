@@ -10,3 +10,13 @@ To start your Phoenix server:
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## Production
+
+This is just a hobby project, so I'm using a single Digital Ocean droppet, and
+[Dokku](http://dokku.viewdocs.io) to host this application in production:
+
+[gym.rosswilson.co.uk](http://gym.rosswilson.co.uk/)
+
+CircleCI builds every branch, and `master` branch updates automatically get deployed.
+Any pending database migrations are run automatically after every deployment.
