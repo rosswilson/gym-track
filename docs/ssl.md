@@ -1,7 +1,7 @@
 ## Download Lego
 We're using Lego to manage issuing of [LetsEncrypt](https://letsencrypt.org) certificates.
 
-* Downloaded the latest `amd64` binary release from [xenolf/lego](https://github.com/xenolf/lego/releases).
+* Downloaded the latest `linux_amd64` binary release from [xenolf/lego](https://github.com/xenolf/lego/releases).
 * Moved the binary to `/usr/local/bin/lego` on the server.
 * Ensure it can be executed: `chmod +x /usr/local/bin/lego`
 * Check that it is available by running `lego --version`
@@ -40,7 +40,7 @@ Create an AWS IAM Policy called `route-53-modify-ross-wilson-zone`, with the fol
 }
 ```
 
-Create an AWS IAM User for the server, e.g. `calcium` and assign it the new policy.
+Create an AWS IAM User for the server, e.g. `calcium-server` and assign it the new policy.
 
 Generate a secret key pair, and create a file on the server called `/root/.aws/credentials` with the following contents:
 
@@ -62,7 +62,7 @@ AWS_REGION=eu-west-1 /usr/local/bin/lego --email="me@rosswilson.co.uk" --domains
 
 Confirm that certificates exist:
 
-`ls -la ~/.lego/certificates/`
+`ls -la ~/.lego/certificates`
 
 ## Configure Dokku
 
